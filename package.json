@@ -1,6 +1,6 @@
 {
   "name": "menu-animation-icon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Menu animation icons",
   "license": "MIT",
   "author": {
@@ -35,14 +35,11 @@
     "styleguide:build": "styleguidist build",
     "test": "react-scripts test --env=jsdom",
     "test:once": "cross-env CI=true npm test",
-    "commit:src": "git add -A && git commit -m 'chore(src/components)'",
     "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js",
-    "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel`'",
-    "commit:docs": "git add -A && git commit -m 'docs: compile from src with `styleguidist`'",
     "storybook": "start-storybook -s ./src -p 6006",
     "build:storybook": "build-storybook -s ./src",
-    "prerelease": "npm run commit:src && npm run commit:lib && npm run commit:docs",
-    "release": "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://aleksel.github.io/menu-animation-icon/blob/v%s/CHANGELOG.md'"
+    "prerelease": "npm run build:lib && npm run styleguide:build && npm run build:storybook",
+    "release": "standard-version"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
