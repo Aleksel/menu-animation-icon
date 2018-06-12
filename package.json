@@ -35,7 +35,7 @@
     "styleguide:build": "styleguidist build",
     "test": "react-scripts test --env=jsdom",
     "test:once": "cross-env CI=true npm test",
-    "commit:src": "git add -A && git commit -m 'chore(src/components): compile from src/macros with `babel`'",
+    "commit:src": "git add -A && git commit -m 'chore(src/components)'",
     "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js",
     "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel`'",
     "commit:docs": "git add -A && git commit -m 'docs: compile from src with `styleguidist`'",
