@@ -5,11 +5,7 @@ import React from 'react';
 import './styles.styl';
 
 export default class KebabMenu extends CommonMenu {
-    renderLines = (className, styleLine) => [
-        <div className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>,
-        <div className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>,
-        <div className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>,
-        <div className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>,
-        <div className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>,
-    ];
+    renderLines = (className, styleLine) => Array
+        .from(Array(5).keys())
+        .map(index => <div key={index} className={`CommonMenu_circle ${className}_circle`} style={styleLine}/>);
 }

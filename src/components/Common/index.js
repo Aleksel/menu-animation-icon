@@ -33,11 +33,9 @@ export default class CommonMenu extends React.Component {
     onMouseEnter = () => this.setState({hover: true});
     onMouseLeave = () => this.setState({hover: false});
 
-    renderLines = (className, styleLine) => [
-        <div className={`CommonMenu_line ${className}_line`} style={styleLine}/>,
-        <div className={`CommonMenu_line ${className}_line`} style={styleLine}/>,
-        <div className={`CommonMenu_line ${className}_line`} style={styleLine}/>,
-    ];
+    renderLines = (className, styleLine) => Array
+        .from(Array(3).keys())
+        .map(index => <div key={index} className={`CommonMenu_line ${className}_line`} style={styleLine}/>);
 
     render() {
         const {name: className} = this.constructor;

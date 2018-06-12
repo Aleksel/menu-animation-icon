@@ -3,49 +3,17 @@ import {action} from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import {withInfo} from '@storybook/addon-info';
 import {storiesOf} from '@storybook/react';
-import PropTypes from 'prop-types';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import {HamburgerMenu, DonerMenu, BentoMenu, KebabMenu, MeatballMenu} from './../src';
+import {
+    BentoMenuWrapper,
+    DonerMenuWrapper,
+    HamburgerMenuWrapper,
+    KebabMenuWrapper,
+    MeatballMenuWrapper,
+} from './../src/helper/withMenuWrapper';
 import './styles.styl';
 
-function withMenuWrapper(BaseComponent) {
-    class MenuWrapper extends React.Component {
-        static propTypes = {
-            onClick: PropTypes.func,
-        };
-
-        static defaultProps = {
-            onClick: () => {
-            },
-        };
-
-        state = {
-            active: false,
-        };
-
-        onClick = isActive => {
-            const {onClick} = this.props;
-            // eslint-disable-next-line no-unused-expressions
-            onClick && onClick(isActive);
-            this.setState({active: isActive});
-        };
-
-        render() {
-            const {onClick, ...restProps} = this.props;
-            const {active} = this.state;
-            return <BaseComponent active={active} onClick={this.onClick} {...restProps}/>;
-        }
-    }
-
-    return MenuWrapper;
-}
-
-const HamburgerMenuWrapper = withMenuWrapper(HamburgerMenu);
-const DonerMenuWrapper = withMenuWrapper(DonerMenu);
-const BentoMenuWrapper = withMenuWrapper(BentoMenu);
-const KebabMenuWrapper = withMenuWrapper(KebabMenu);
-const MeatballMenuWrapper = withMenuWrapper(MeatballMenu);
 storiesOf('Menu', module)
     .addDecorator((story, context) => withInfo()(story)(context))
     .addDecorator(centered)
