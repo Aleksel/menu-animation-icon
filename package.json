@@ -1,6 +1,6 @@
 {
   "name": "menu-animation-icon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Menu animation icons",
   "license": "MIT",
   "author": {
@@ -34,7 +34,7 @@
     "styleguide:build": "styleguidist build",
     "test": "react-scripts test --env=jsdom",
     "test:once": "cross-env CI=true npm test",
-    "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js",
+    "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js --copy-files",
     "storybook": "start-storybook -s ./src -p 6006",
     "build:storybook": "build-storybook -s ./src",
     "prerelease": "npm run build:lib && npm run styleguide:build && npm run build:storybook",
@@ -64,11 +64,9 @@
       "react"
     ]
   },
-  "dependencies": {
-    "prop-types": "^15.5.8",
-    "warning": "^4.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "prop-types": "^15.5.8",
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/addon-centered": "^3.4.7",
     "@storybook/addon-info": "^3.4.7",
