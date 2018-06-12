@@ -1,4 +1,4 @@
 ```sh
-npm install --save react-google-maps # or
-yarn add react-google-maps
+npm install --save menu-animation-icon # or
+yarn add menu-animation-icon
 ```
