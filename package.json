@@ -1,0 +1,124 @@
+{
+  "name": "menu-animation-icon",
+  "version": "0.1.0",
+  "description": "Menu animation icons",
+  "license": "MIT",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aleksel/menu-animation-icon"
+  },
+  "bugs": {
+    "url": "https://github.com/aleksel/menu-animation-icon/issues"
+  },
+  "homepage": "https://aleksel.github.io/menu-animation-icon/",
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "keywords": [
+    "React",
+    "Menu",
+    "Icon",
+    "react-component",
+    "animation",
+    "pure css"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "test": "react-scripts test --env=jsdom",
+    "test:once": "cross-env CI=true npm test",
+    "commit:src": "git add -A && git commit -m 'chore(src/components): compile from src/macros with `babel`'",
+    "build:lib": "cross-env NODE_ENV=production babel src --out-dir lib --ignore macros,tx,spec.js",
+    "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel`'",
+    "commit:docs": "git add -A && git commit -m 'docs: compile from src with `styleguidist`'",
+    "storybook": "start-storybook -s ./src -p 6006",
+    "build:storybook": "build-storybook -s ./src",
+    "prerelease": "npm run commit:src && npm run commit:lib && npm run commit:docs",
+    "release": "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://aleksel.github.io/menu-animation-icon/blob/v%s/CHANGELOG.md'"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "babel": {
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-runtime"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "ie": 9
+          }
+        }
+      ],
+      "react"
+    ]
+  },
+  "dependencies": {
+    "babel-runtime": "^6.11.6",
+    "invariant": "^2.2.1",
+    "marker-clusterer-plus": "^2.1.4",
+    "prop-types": "^15.5.8",
+    "scriptjs": "^2.5.8",
+    "warning": "^4.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.7",
+    "@storybook/addon-centered": "^3.4.7",
+    "@storybook/addon-info": "^3.4.7",
+    "@storybook/addon-notes": "^3.4.7",
+    "@storybook/react": "^3.4.7",
+    "autoprefixer": "^8.6.2",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2",
+    "classnames": "^2.2.6",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "glob": "^7.1.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jscodeshift": "^0.5.1",
+    "less-loader": "^4.1.0",
+    "lint-staged": "^7.2.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.9.0",
+    "postcss-flexbugs-fixes": "^3.3.1",
+    "postcss-loader": "^2.1.5",
+    "prettier": "^1.8.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "^1.0.17",
+    "react-styleguidist": "^7.0.17",
+    "resolve-url-loader": "^2.3.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.3",
+    "standard-version": "^4.2.0",
+    "style-loader": "^0.21.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "to-markdown": "^3.1.0"
+  }
+}
