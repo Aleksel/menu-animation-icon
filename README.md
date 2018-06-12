@@ -38,6 +38,9 @@ export default class CustomElement extends React.Component {
 
 ```
 
+## [Examples](https://aleksel.github.io/menu-animation-icon/#ui-components)
+
+
 ## [Changelog](https://github.com/Aleksel/menu-animation-icon/blob/master/CHANGELOG.md)
 
 
