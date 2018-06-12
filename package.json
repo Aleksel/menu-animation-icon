@@ -26,8 +26,7 @@
     "Menu",
     "Icon",
     "react-component",
-    "animation",
-    "pure css"
+    "animation icon"
   ],
   "scripts": {
     "precommit": "lint-staged",
