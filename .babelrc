@@ -9,6 +9,5 @@
     "stage-0",
     "react"
   ],
-  "plugins": [
-  ]
+  "plugins": ["babel-plugin-stylus-compiler"]
 }
