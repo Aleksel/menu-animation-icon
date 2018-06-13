@@ -1,6 +1,6 @@
 {
   "name": "menu-animation-icon",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Menu animation icons",
   "license": "MIT",
   "author": {
@@ -66,7 +66,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "prop-types": "^15.5.8",
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/addon-centered": "^3.4.7",
     "@storybook/addon-info": "^3.4.7",
@@ -75,6 +74,7 @@
     "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-stylus-compiler": "^1.4.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -98,17 +98,14 @@
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-loader": "^2.1.5",
     "prettier": "^1.8.2",
+    "prop-types": "^15.5.8",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "^1.0.17",
     "react-styleguidist": "^7.0.17",
     "resolve-url-loader": "^2.3.0",
     "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.3",
     "standard-version": "^4.2.0",
-    "style-loader": "^0.21.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
     "to-markdown": "^3.1.0"
   }
 }
